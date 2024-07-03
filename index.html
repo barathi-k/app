@@ -1,501 +1,528 @@
-<!DOCTYPE html><html><head>
-    <title>Maestro</title>
-    <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="css/ionicons.min.css">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Engaging Webinars</title>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="css/ionicons.min.css">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 </head>
 
 <body>
-    <style>
-        .secret {
-            opacity: 0;
-        }
+  <style>
+    .secret {
+      opacity: 0;
+    }
 
-        .secret:focus {
-            opacity: 1;
-        }
-        /* -- Copy text -- */
-        .copy-text-container {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        max-width: 960px;
-        margin: auto;
-        }
-        .copy-text-container #inviteCode.invite-page {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        justify-content: space-between;
-        width: 100%;
-        box-shadow: 0px 1px 2px rgba(0, 0, 0, .07);
-        }
-        .copy-text-container #inviteCode.invite-page #link {
-        align-self: center;
-        font-size: 1.2em;
-        color: #333;
-        font-weight: bold;
-        flex-grow: 2;
-        background-color: #fff;
-        border: none;
-        }
-        .copy-text-container #inviteCode.invite-page #copy {
-        min-height: 30px;
-        margin-left: 20px;
-        padding: 10px; 20px;
-        border: 1px solid black;
-        border-radius: 5px;
-        background-color: #f8f8f8;
-        }
-        .copy-text-container #inviteCode.invite-page #copy i {
-        display: block;
-        line-height: 30px;
-        position: relative;
-        }
-        .copy-text-container #inviteCode.invite-page #copy i::before {
-        display: block;
-        width: 15px;
-        margin: 0 auto;
-        }
-        .copy-text-container #inviteCode.invite-page #copy:hover {
-        cursor: pointer;
-        background-color: #dfdfdf;
-        transition: background-color 0.3s ease-in;
-        }
-        /* -- end copy text -- */
+    .secret:focus {
+      opacity: 1;
+    }
 
-        #zmmtg-root {
-            display: none;
-        }
+    /* -- Copy text -- */
+    .copy-text-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .copy-text-container #inviteCode.invite-page {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      justify-content: space-between;
+      width: 100%;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, .07);
+    }
+
+    .copy-text-container #inviteCode.invite-page #link {
+      align-self: center;
+      font-size: 1.2em;
+      color: #333;
+      font-weight: bold;
+      flex-grow: 2;
+      background-color: #fff;
+      border: none;
+    }
+
+    .copy-text-container #inviteCode.invite-page #copy {
+      min-height: 30px;
+      margin-left: 20px;
+      padding: 10px;
+      20px;
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: #f8f8f8;
+    }
+
+    .copy-text-container #inviteCode.invite-page #copy i {
+      display: block;
+      line-height: 30px;
+      position: relative;
+    }
+
+    .copy-text-container #inviteCode.invite-page #copy i::before {
+      display: block;
+      width: 15px;
+      margin: 0 auto;
+    }
+
+    .copy-text-container #inviteCode.invite-page #copy:hover {
+      cursor: pointer;
+      background-color: #dfdfdf;
+      transition: background-color 0.3s ease-in;
+    }
+
+    /* -- end copy text -- */
+
+    #zmmtg-root {
+      display: none;
+    }
 
 
-      /* --- */
-      @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+    /* --- */
+    @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
-      *, *:before, *:after {
-        -webkit-box-sizing: inherit;
-        -moz-box-sizing: inherit;
-        box-sizing: inherit;
-      }
+    *,
+    *:before,
+    *:after {
+      -webkit-box-sizing: inherit;
+      -moz-box-sizing: inherit;
+      box-sizing: inherit;
+    }
 
-      ::-webkit-input-placeholder {
-        color: #56585b;
-      }
+    ::-webkit-input-placeholder {
+      color: #56585b;
+    }
 
-      ::-moz-placeholder {
-        color: #56585b;
-      }
+    ::-moz-placeholder {
+      color: #56585b;
+    }
 
-      :-moz-placeholder {
-        color: #56585b;
-      }
+    :-moz-placeholder {
+      color: #56585b;
+    }
 
-      html {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-      }
+    html {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
 
+    body {
+      margin: 0;
+      background: url(images/bg.jpg) no-repeat center -100px fixed, #030a1d;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      color: #0a0a0b;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1000px rgb(58 41 105 / 60%)
+    }
+
+    ul,
+    nav {
+      list-style: none;
+      padding: 0;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.9;
+    }
+
+    a:hover {
+      opacity: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700 !important;
+      color: #fff;
+      margin: 0 0 1.5rem;
+      font-family: 'Lato', sans-serif !important;
+    }
+
+    i {
+      font-size: 1.3rem;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      padding: 10px 100px 0;
+    }
+
+    header nav ul {
+      display: flex;
+    }
+
+    header nav li {
+      margin: 0 15px;
+    }
+
+    header nav li:first-child {
+      margin-left: 0;
+    }
+
+    header nav li:last-child {
+      margin-right: 0;
+    }
+
+    a.btn {
+      color: #fff;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+
+    a.btn:hover {
+      background: #d73851;
+      border: 1px solid #d73851;
+      color: #fff;
+    }
+
+    .cover {
+      height: 100vh;
+      width: 100%;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0)));
+      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+      padding: 20px 50px;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+    }
+
+    .flex-form input[type="submit"] {
+      background: #0E71EB;
+      height: 50px;
+      border: 1px solid #0E71EB;
+      color: #fff;
+      padding: 0 30px;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+
+    .flex-form input[type="submit"]:hover {
+      background: #0956b5;
+      border: 1px solid #0E71EB;
+    }
+
+    .flex-form {
+      display: -webkit-box;
+      display: flex;
+      z-index: 10;
+      position: relative;
+      width: 500px;
+      box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .flex-form>* {
+      border: 0;
+      padding: 0 0 0 10px;
+      background: #fff;
+      line-height: 50px;
+      font-size: 1rem;
+      border-radius: 0;
+      outline: 0;
+      -webkit-appearance: none;
+    }
+
+    input[type="search"] {
+      height: 50px;
+      flex-basis: 500px;
+    }
+
+    #madeby {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 25px 100px;
+      color: #fff;
+    }
+
+    @media all and (max-width:800px) {
       body {
-        margin: 0;
-        background: url(images/bg.jpg) no-repeat center -100px fixed, #030a1d;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        color: #0a0a0b;
-        overflow: hidden;
-        box-shadow: inset 0 0 0 1000px rgb(58 41 105 / 60%)
+        font-size: 0.9rem;
       }
 
-      ul, nav{
-        list-style: none;
-        padding: 0;
+      .flex-form {
+        width: 100%;
       }
 
-      a {
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-        opacity: 0.9;
+      input[type="search"] {
+        flex-basis: 100%;
       }
 
-      a:hover {
-        opacity: 1;
-      }
-
-      h1 {
-        font-size: 3rem;
-        font-weight: 700!important;
-        color: #fff;
-        margin: 0 0 1.5rem;
-        font-family: 'Lato', sans-serif!important;
-      }
-
-      i {
-        font-size: 1.3rem;
+      .flex-form>* {
+        font-size: 1.2rem;
       }
 
       header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #fff;
-        padding: 10px 100px 0;
-      }
-
-      header nav ul {
-        display: flex;
-      }
-
-      header nav li{
-        margin: 0 15px;
-      }
-
-      header nav li:first-child{
-        margin-left: 0; 
-      }
-
-      header nav li:last-child{
-        margin-right: 0;  
-      }
-
-      a.btn {
-        color: #fff;
-        padding: 10px;
-        border: 1px solid rgba(255,255,255,0.5);
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        transition: all 0.2s;
-      }
-
-      a.btn:hover {
-        background: #d73851;
-        border: 1px solid #d73851;
-        color: #fff;
-      }
-
-      .cover  {
-        height: 100vh;
-        width: 100%;
-        background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.05)), to(rgba(0,0,0,0)));
-        background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
-        background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
-        padding: 20px 50px;
-        display: -webkit-box;
-        display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         flex-direction: column;
-        -webkit-box-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        align-items: center;
+        padding: 10px !important;
       }
 
-      .flex-form input[type="submit"] {
-        background: #0E71EB;
-        height: 50px;
-        border: 1px solid #0E71EB;
-        color: #fff;
-        padding: 0 30px;
-        cursor: pointer;
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        transition: all 0.2s;
+      header h2 {
+        margin-bottom: 15px;
       }
 
-      .flex-form input[type="submit"]:hover {
-        background: #0956b5;
-        border: 1px solid #0E71EB;
+      h1 {
+        font-size: 2rem;
+      }
+
+      .cover {
+        padding: 20px;
+      }
+
+      #madeby {
+        padding: 30px 20px;
+      }
+    }
+
+    @media all and (max-width:360px) {
+      header nav li {
+        margin: 0 10px;
       }
 
       .flex-form {
         display: -webkit-box;
         display: flex;
-        z-index: 10;
-        position: relative;
-        width: 500px;
-        box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
-      }
-
-      .flex-form > * {
-        border: 0;
-        padding: 0 0 0 10px;
-        background: #fff;
-        line-height: 50px;
-        font-size: 1rem;
-        border-radius: 0;
-        outline: 0;
-        -webkit-appearance: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
       }
 
       input[type="search"] {
-        height: 50px;
-        flex-basis: 500px;
+        flex-basis: 0;
       }
 
-      #madeby {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        padding: 25px 100px;
-        color: #fff;
+      label {
+        display: none;
       }
-
-        @media all and (max-width:800px) {
-          body {
-            font-size: 0.9rem;
-          }
-
-          .flex-form {
-            width: 100%;
-          }
-
-          input[type="search"] {
-            flex-basis: 100%;
-          }
-
-          .flex-form > * {
-            font-size: 1.2rem;
-          }
-
-          header {
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            flex-direction: column;
-            padding: 10px !important;
-          }
-
-          header h2 {
-            margin-bottom: 15px;
-          }
-
-          h1 {
-            font-size: 2rem;
-          }
-
-          .cover {
-            padding: 20px;
-          }
-
-          #madeby {
-            padding: 30px 20px;
-          }
-        }
-
-        @media all and (max-width:360px) {
-          header nav li{
-            margin: 0 10px;
-          }
-
-          .flex-form {
-            display: -webkit-box;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            flex-direction: column;
-          }
-
-          input[type="search"] {
-            flex-basis: 0;
-          }
-
-          label {
-            display: none;
-          }
-        } 
+    }
 
 
-        .box {
-          background: #210a7d2e;
-          padding: 50px;
-          border-radius: 20px;
-          box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
-          backdrop-filter: blur(6px);
-        }
+    .box {
+      background: #210a7d2e;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+      backdrop-filter: blur(6px);
+    }
 
-        p {
-          color: white;
-          opacity: 0.8;
-          font-size: 0.8em;
-        }
-    </style>
+    p {
+      color: white;
+      opacity: 0.8;
+      font-size: 0.8em;
+    }
+  </style>
 
-    <div class="container">
+  <div class="container">
 
     <div class="cover">
-        <div class="box">
-            <h1>Join Zoom on OBS</h1>
-            <form class="flex-form" id="non_essential_fields" style="display: none; bottom: 14px;/* max-width: 240px; *//* left: 0; */">
-                <label for="from">
-                    <i class="ion ion-person"></i>
-                </label>
-                <input type="search" placeholder="Your name" id="display_name">
-                <input type="text" placeholder="Chat Overlay Url" id="roomId">
-            </form>
-                <form class="flex-form" id="old_login">
-                  <label for="from">
-                    <i class="ion ion-link"></i>
-                  </label>
-                  <input type="search" placeholder="Zoom meeting link" id="meeting_link">
-                  <input type="submit" value="Join" id="join_meeting">
-                </form>
-                <form class="flex-form" id="chrome_extension_login" style="display: none;">
-                  <label for="from">
-                    <i class="ion ion-link"></i>
-                  </label>
-                  <input type="search" placeholder="Zoom meeting link" id="meeting_link_chrome_extension">
-                  <input type="submit" value="Join" id="join_meeting_chrome_extension">
-                </form>
-            <br>
-            <p>Connect to a Zoom meeting that is <b>already in progress.</b></p>
-            <p>In case it the meeting haven't started yet, open it first through the<br>regular <b>Zoom app</b> and then connect here once again.</p>
-            <p>Zoom links that requires registration must have authentication requirement
-            <br>turned off and you must to use the unique link that is sent to your email.</p>
+      <div class="box">
+        <h1>Join Zoom on OBS</h1>
+        <form class="flex-form" id="non_essential_fields"
+          style="display: none; bottom: 14px;/* max-width: 240px; *//* left: 0; */">
+          <label for="from">
+            <i class="ion ion-person"></i>
+          </label>
+          <input type="search" placeholder="Your name" id="display_name">
+          <input type="text" placeholder="Chat Overlay Url" id="roomId">
+        </form>
+        <form class="flex-form" id="old_login">
+          <label for="from">
+            <i class="ion ion-link"></i>
+          </label>
+          <input type="search" placeholder="Zoom meeting link" id="meeting_link">
+          <input type="submit" value="Join" id="join_meeting">
+        </form>
+        <form class="flex-form" id="chrome_extension_login" style="display: none;">
+          <label for="from">
+            <i class="ion ion-link"></i>
+          </label>
+          <input type="search" placeholder="Zoom meeting link" id="meeting_link_chrome_extension">
+          <input type="submit" value="Join" id="join_meeting_chrome_extension">
+        </form>
+        <br>
+        <p>Connect to a Zoom meeting that is <b>already in progress.</b></p>
+        <p>In case it the meeting haven't started yet, open it first through the<br>regular <b>Zoom app</b> and then
+          connect here once again.</p>
+        <p>Zoom links that requires registration must have authentication requirement
+          <br>turned off and you must to use the unique link that is sent to your email.
+        </p>
 
-            <h4 style="color: #F4F4F4; margin-bottom: 5px;">Link to the 24/7 Zoom Simulator:</h4>
+        <h4 style="color: #F4F4F4; margin-bottom: 5px;">Link to the 24/7 Zoom Simulator:</h4>
 
-            <div class="copy-text-container">
-                <div id="inviteCode" class="invite-page">
-                    <input id="link" value="https://us06web.zoom.us/j/99129414035?pwd=a1ZpVEJZZDFnclZLZ1MrWlhIb2Uzdz09&amp;br=183nda983718fh83018fjlkj18DFfn18AnzZn" readonly="">
-                    <div id="copy">
-                        Copy to clipboard
-                    </div>
-                </div>
+        <div class="copy-text-container">
+          <div id="inviteCode" class="invite-page">
+            <input id="link"
+              value="https://us06web.zoom.us/j/99129414035?pwd=a1ZpVEJZZDFnclZLZ1MrWlhIb2Uzdz09&amp;br=183nda983718fh83018fjlkj18DFfn18AnzZn"
+              readonly="">
+            <div id="copy">
+              Copy to clipboard
             </div>
-
+          </div>
         </div>
-        <input type="text" placeholder="vote url" id="slidoVoteUrl" class="secret">
-        <input type="text" placeholder="authorization" id="slidoVoteAuthorization" class="secret">
-        <input type="text" placeholder="payload" id="slidoVotePayload" class="secret">
+
+      </div>
+      <input type="text" placeholder="vote url" id="slidoVoteUrl" class="secret">
+      <input type="text" placeholder="authorization" id="slidoVoteAuthorization" class="secret">
+      <input type="text" placeholder="payload" id="slidoVotePayload" class="secret">
     </div>
+  </div>
+
+  <nav id="nav-tool" class="navbar navbar-inverse navbar-fixed-top" style="display: none;">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Maestro</a>
+      </div>
+      <div id="navbar" class="websdktest">
+        <form class="navbar-form navbar-right" id="meeting_form">
+          <div class="form-group">
+            <input type="text" name="display_name" id="display_name" value="" maxlength="100" placeholder="Name"
+              class="form-control" required="">
+          </div>
+          <div class="form-group">
+            <input type="text" name="meeting_number" id="meeting_number" value="" maxlength="200" style="width:150px"
+              placeholder="Meeting Number" class="form-control" required="">
+          </div>
+          <div class="form-group">
+            <input type="text" name="meeting_pwd" id="meeting_pwd" value="" style="width:150px" maxlength="32"
+              placeholder="Meeting Password" class="form-control">
+          </div>
+          <div class="form-group" style="display: none">
+            <input type="text" name="meeting_email" id="meeting_email" value="bot@insidethe.show" style="width:150px"
+              maxlength="32" placeholder="Email option" class="form-control">
+          </div>
+
+          <div class="form-group" style="display: none">
+            <select id="meeting_role" class="sdk-select">
+              <option value="0">Attendee</option>
+              <option value="1">Host</option>
+              <option value="5">Assistant</option>
+            </select>
+          </div>
+          <div class="form-group" style="display: none">
+            <select id="meeting_china" class="sdk-select">
+              <option value="0">Global</option>
+              <option value="1">China</option>
+            </select>
+          </div>
+          <div class="form-group" style="display: none">
+            <select id="meeting_lang" class="sdk-select">
+              <option value="en-US">English</option>
+              <option value="de-DE">German Deutsch</option>
+              <option value="es-ES">Spanish Español</option>
+              <option value="fr-FR">French Français</option>
+              <option value="jp-JP">Japanese 日本語</option>
+              <option value="pt-PT">Portuguese Portuguese</option>
+              <option value="ru-RU">Russian �&nbsp;усский</option>
+              <option value="zh-CN">Chinese 简体中文</option>
+              <option value="zh-TW">Chinese 繁体中文</option>
+              <option value="ko-KO">Korean 한국어</option>
+              <option value="vi-VN">Vietnamese Tiếng Việt</option>
+              <option value="it-IT">Italian italiano</option>
+            </select>
+          </div>
+
+          <input type="hidden" value="" id="copy_link_value">
+          <button type="submit" class="btn btn-primary" id="join_meeting">Join</button>
+          <button type="submit" class="btn btn-primary" id="clear_all" style="display: none">Clear</button>
+          <button type="button" link="" onclick="window.copyJoinLink('#copy_join_link')" class="btn btn-primary"
+            id="copy_join_link" style="display: none;">Copy Direct join link</button>
+
+
+        </form>
+      </div>
+      <!--/.navbar-collapse -->
     </div>
+  </nav>
 
-    <nav id="nav-tool" class="navbar navbar-inverse navbar-fixed-top" style="display: none;">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Maestro</a>
-            </div>
-            <div id="navbar" class="websdktest">
-                <form class="navbar-form navbar-right" id="meeting_form">
-                    <div class="form-group">
-                        <input type="text" name="display_name" id="display_name" value="" maxlength="100" placeholder="Name" class="form-control" required="">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="meeting_number" id="meeting_number" value="" maxlength="200" style="width:150px" placeholder="Meeting Number" class="form-control" required="">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="meeting_pwd" id="meeting_pwd" value="" style="width:150px" maxlength="32" placeholder="Meeting Password" class="form-control">
-                    </div>
-                    <div class="form-group" style="display: none">
-                        <input type="text" name="meeting_email" id="meeting_email" value="bot@insidethe.show" style="width:150px" maxlength="32" placeholder="Email option" class="form-control">
-                    </div>
+  <script>
+    // functionality to copy text from inviteCode to clipboard
 
-                    <div class="form-group" style="display: none">
-                        <select id="meeting_role" class="sdk-select">
-                            <option value="0">Attendee</option>
-                            <option value="1">Host</option>
-                            <option value="5">Assistant</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="display: none">
-                        <select id="meeting_china" class="sdk-select">
-                            <option value="0">Global</option>
-                            <option value="1">China</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="display: none">
-                        <select id="meeting_lang" class="sdk-select">
-                            <option value="en-US">English</option>
-                            <option value="de-DE">German Deutsch</option>
-                            <option value="es-ES">Spanish Español</option>
-                            <option value="fr-FR">French Français</option>
-                            <option value="jp-JP">Japanese 日本語</option>
-                            <option value="pt-PT">Portuguese Portuguese</option>
-                            <option value="ru-RU">Russian �&nbsp;усский</option>
-                            <option value="zh-CN">Chinese 简体中文</option>
-                            <option value="zh-TW">Chinese 繁体中文</option>
-                            <option value="ko-KO">Korean 한국어</option>
-                            <option value="vi-VN">Vietnamese Tiếng Việt</option>
-                            <option value="it-IT">Italian italiano</option>
-                        </select>
-                    </div>
+    // trigger copy event on click
 
-                    <input type="hidden" value="" id="copy_link_value">
-                    <button type="submit" class="btn btn-primary" id="join_meeting">Join</button>
-                    <button type="submit" class="btn btn-primary" id="clear_all" style="display: none">Clear</button>
-                    <button type="button" link="" onclick="window.copyJoinLink('#copy_join_link')" class="btn btn-primary" id="copy_join_link" style="display: none;">Copy Direct join link</button>
+    document.getElementById('copy').addEventListener('click', (event) => {
+      console.log(event);
+      copyToClipboard(event);
+    })
 
-
-                </form>
-            </div>
-            <!--/.navbar-collapse -->
-        </div>
-    </nav>
-
-    <script>
-        // functionality to copy text from inviteCode to clipboard
-
-        // trigger copy event on click
-    
-        document.getElementById('copy').addEventListener('click', (event) => {
-            console.log(event);
-            copyToClipboard(event);
-        })
-
-        // event handler
-        function copyToClipboard(e) {
-            // alert('this function was triggered');
-            // find target element
-            const inp = document.getElementById('link')
-            console.log(inp);
-            // check if input element exist and if it's selectable
-            if (inp && inp.select) {
-                // select text
-                inp.select();
-                try {
-                    // copy text
-                    document.execCommand('copy');
-                    inp.blur();
-                } catch (err) {
-                    //fallback in case exexCommand doesnt work
-                    alert('please press Ctrl/Cmd+C to copy');
-                }
-
-            }
-
+    // event handler
+    function copyToClipboard(e) {
+      // alert('this function was triggered');
+      // find target element
+      const inp = document.getElementById('link')
+      console.log(inp);
+      // check if input element exist and if it's selectable
+      if (inp && inp.select) {
+        // select text
+        inp.select();
+        try {
+          // copy text
+          document.execCommand('copy');
+          inp.blur();
+        } catch (err) {
+          //fallback in case exexCommand doesnt work
+          alert('please press Ctrl/Cmd+C to copy');
         }
-    </script>
 
-    <script src="js/react.min.js"></script>
-    <script src="js/react-dom.min.js"></script>
-    <script src="js/redux.min.js"></script>
-    <script src="js/redux-thunk.min.js"></script>
-    <script src="js/lodash.min.js"></script>
-    <script src="js/zoom-meeting-2.17.0.min.js"></script>
-    <script src="js/tool.js"></script>
-    <script src="js/vconsole.min.js"></script>
-    <script src="js/index.js"></script>
+      }
 
-    <script>
+    }
+  </script>
+
+  <script src="js/react.min.js"></script>
+  <script src="js/react-dom.min.js"></script>
+  <script src="js/redux.min.js"></script>
+  <script src="js/redux-thunk.min.js"></script>
+  <script src="js/lodash.min.js"></script>
+  <script src="js/zoom-meeting-2.17.0.min.js"></script>
+  <script src="js/tool.js"></script>
+  <script src="js/vconsole.min.js"></script>
+  <script src="js/index.js"></script>
+
+  <script>
 
 
-    </script>
+  </script>
 
 
 
-</body></html>
+</body>
+
+</html>
