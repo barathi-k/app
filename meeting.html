@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Maestro Launcher</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.11.0/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.11.0/css/react-select.css" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="origin-trial" content="">
+    <style>
+        /* Speaker view transition animation setup
+        .meeting-client::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            left: 0;
+            background: #1c1c1c;
+            width: 0vw;
+            transition: width 400ms cubic-bezier(0.4, 0, 1, 1);
+        } */
+
+        .meeting-client.blackout::after {
+            width: 100vw;
+        }
+
+        /* Remove active speaker border */
+        .loading-main {
+            opacity: 0;
+        }
+        .gallery-video-container__video-frame--active,
+        .speaker-active-container__video-frame--active,
+        .speaker-bar-container__video-frame--active,
+        .speaker-active-container__video-frame--active {
+            border-image: linear-gradient(transparent, transparent, transparent) 20/4px!important;
+            outline: 0px!important;
+        }
+
+        .gallery-video-container__main-view .video-avatar__avatar-footer {
+            zoom: 3
+        }
+
+        .firstNameGrid .gallery-video-container__main-view .video-avatar__avatar-footer span {
+            word-spacing: 200px;
+            text-overflow: inherit;
+        }
+
+        .speaker-active-container__wrap .video-avatar__avatar-footer {
+            zoom: 3.5
+        }
+
+        .speaker-bar-container__horizontal-view-wrap .video-avatar__avatar-footer--pin-icon,
+        .speaker-bar-container__horizontal-view-wrap .video-avatar__avatar-footer--spotlight-icon,
+        .speaker-active-container__wrap .video-avatar__avatar-footer--pin-icon,
+        .speaker-active-container__wrap .video-avatar__avatar-footer--spotlight-icon,
+        .sharing-audio-feature-tips,
+        .ant-message,
+        .show-tip,
+        .pop-panel__panel,
+        .last-chat-message-tip__container,
+        .last-chat-message-tip__container--menu,
+        .join-dialog,
+        .settings-feature-tips,
+        .wc-toast, /* hide message to update sdk */
+        .notification-message-wrap, /* messages about people in the waiting room */
+        .ReactModal__Overlay /* modal saying couldn't join audio */
+        {
+            visibility: hidden!important;
+        }
+
+        #participantSectionMenu, #chatSectionMenu, .notification-message-feature-wrap {
+            display: none;
+        }
+
+        #wc-content .meeting-info-container,
+        .gallery-video-container__switch-button,
+        .speaker-active-container__switch-button {
+            opacity: 0
+        }
+
+        /* Make 'remove pin' and 'remove spot' buton out of participant video */
+        .meeting-info-container--left-side {
+            top: 0!important;
+        }
+
+        /* Remove green shiled app app icon when hovering */
+        #meeting-info-indication, #app-signal {
+            display: none!important;
+        }
+
+        .multi-view,
+        .video-share-layout,
+        .speaker-bar-container__horizontal-view-wrap,
+        #zmmtg-root {
+            background: transparent!important;
+        }
+
+        #wc-content:hover .meeting-info-container,
+        #wc-content:hover .gallery-video-container__switch-button,
+        #wc-content:hover .speaker-active-container__switch-button {
+            opacity: 1
+        }
+
+        .video-avatar__avatar-footer {
+            border-radius: 8px;
+            margin: 3px;
+            padding: 4px 9px 4px 3px!important;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script src="https://source.zoom.us/2.17.0/lib/vendor/react.min.js"></script>
+    <script src="https://source.zoom.us/2.17.0/lib/vendor/react-dom.min.js"></script>
+    <script src="https://source.zoom.us/2.17.0/lib/vendor/redux.min.js"></script>
+    <script src="https://source.zoom.us/2.17.0/lib/vendor/redux-thunk.min.js"></script>
+    <script src="https://source.zoom.us/2.17.0/lib/vendor/lodash.min.js"></script>
+    <script src="https://source.zoom.us/zoom-meeting-2.17.0.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/maestro.js"></script>
+    <script src="js/tool.js"></script>
+    <script src="js/vconsole.min.js"></script>
+    <script src="js/meeting.js"></script>
+    <script src="js/names.js"></script>
+    <script src="js/socialstream.js"></script>
+</body>
+
+</html>
