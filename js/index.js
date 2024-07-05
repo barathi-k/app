@@ -3,7 +3,7 @@ setTimeout(() => {
 }, 200)
 
 
-window.addEventListener('DOMContentLoaded', function(event) {
+window.addEventListener('DOMContentLoaded', function (event) {
   console.log('DOM fully loaded and parsed');
   websdkready();
 });
@@ -25,7 +25,7 @@ function websdkready() {
     // Generate a random 4-digit number
     var randomNumber = Math.floor(1000 + Math.random() * 9000);
     // Create the email with the random number
-    return "backstage" + randomNumber + "@insidethe.show";
+    return "backstage" + randomNumber + "@ew.com";
   }
 
   function updateMeetingEmail() {
@@ -34,7 +34,7 @@ function websdkready() {
     // Find the element with ID 'meeting_email'
     var emailInput = document.getElementById('meeting_email');
     // Update the value of the element
-    if(emailInput) {
+    if (emailInput) {
       emailInput.value = email;
     } else {
       console.log("Element with ID 'meeting_email' not found.");
@@ -156,30 +156,30 @@ function websdkready() {
   });
 
   const joinMeeting = () => {
-      var meetingConfig = testTool.getMeetingConfig();
-      if (!meetingConfig.mn || !meetingConfig.name) {
-        alert("Meeting number or username is empty");
-        return false;
-      }
+    var meetingConfig = testTool.getMeetingConfig();
+    if (!meetingConfig.mn || !meetingConfig.name) {
+      alert("Meeting number or username is empty");
+      return false;
+    }
 
-      meetingConfig.name = btoa(atob(meetingConfig.name) + " (Backstage)")
+    meetingConfig.name = btoa(atob(meetingConfig.name) + " (Backstage)")
 
-      testTool.setCookie("meeting_number", meetingConfig.mn);
-      testTool.setCookie("meeting_pwd", meetingConfig.pwd);
+    testTool.setCookie("meeting_number", meetingConfig.mn);
+    testTool.setCookie("meeting_pwd", meetingConfig.pwd);
 
-      var signature = ZoomMtg.generateSDKSignature({
-        meetingNumber: meetingConfig.mn,
-        sdkKey: CLIENT_ID,
-        sdkSecret: CLIENT_SECRET,
-        role: meetingConfig.role,
-        success: function (res) {
-          console.log(res.result);
-          meetingConfig.signature = res.result;
-          meetingConfig.sdkKey = CLIENT_ID;
+    var signature = ZoomMtg.generateSDKSignature({
+      meetingNumber: meetingConfig.mn,
+      sdkKey: CLIENT_ID,
+      sdkSecret: CLIENT_SECRET,
+      role: meetingConfig.role,
+      success: function (res) {
+        console.log(res.result);
+        meetingConfig.signature = res.result;
+        meetingConfig.sdkKey = CLIENT_ID;
 
-          if (tk) {
-            meetingConfig.tk = tk
-          }
+        if (tk) {
+          meetingConfig.tk = tk
+        }
 
         const file = /*['simulator', 'host'].includes(params?.mode) ? '/simulator.html?' :*/ '/meeting.html?'
         var joinUrl = file + testTool.serialize(meetingConfig) +
@@ -191,8 +191,8 @@ function websdkready() {
         window.onunload = null
 
         window.location.href = window.location.origin + joinUrl
-        },
-      });
+      },
+    });
   }
 
   // Automatically join meeting if params is filled
