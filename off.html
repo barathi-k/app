@@ -1,286 +1,289 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Maestro</title>
-    <meta charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>EW</title>
+  <meta charset="utf-8" />
+  <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 </head>
 
 <body>
-    <style>
-        #zmmtg-root {
-            display: none;
-        }
+  <style>
+    #zmmtg-root {
+      display: none;
+    }
 
 
-      /* --- */
-      @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+    /* --- */
+    @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
-      *, *:before, *:after {
-        -webkit-box-sizing: inherit;
-        -moz-box-sizing: inherit;
-        box-sizing: inherit;
-      }
+    *,
+    *:before,
+    *:after {
+      -webkit-box-sizing: inherit;
+      -moz-box-sizing: inherit;
+      box-sizing: inherit;
+    }
 
-      ::-webkit-input-placeholder {
-        color: #56585b;
-      }
+    ::-webkit-input-placeholder {
+      color: #56585b;
+    }
 
-      ::-moz-placeholder {
-        color: #56585b;
-      }
+    ::-moz-placeholder {
+      color: #56585b;
+    }
 
-      :-moz-placeholder {
-        color: #56585b;
-      }
+    :-moz-placeholder {
+      color: #56585b;
+    }
 
-      html {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-      }
+    html {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
 
+    body {
+      margin: 0;
+      background: url(bg.jpg) no-repeat center -100px fixed, #030a1d;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      color: #0a0a0b;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1000px rgb(58 41 105 / 60%)
+    }
+
+    ul,
+    nav {
+      list-style: none;
+      padding: 0;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.9;
+    }
+
+    a:hover {
+      opacity: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700 !important;
+      color: #fff;
+      margin: 0 0 1.5rem;
+      font-family: 'Lato', sans-serif !important;
+    }
+
+    i {
+      font-size: 1.3rem;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      padding: 10px 100px 0;
+    }
+
+    header nav ul {
+      display: flex;
+    }
+
+    header nav li {
+      margin: 0 15px;
+    }
+
+    header nav li:first-child {
+      margin-left: 0;
+    }
+
+    header nav li:last-child {
+      margin-right: 0;
+    }
+
+    a.btn {
+      color: #fff;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+
+    a.btn:hover {
+      background: #d73851;
+      border: 1px solid #d73851;
+      color: #fff;
+    }
+
+    .cover {
+      height: 100vh;
+      width: 100%;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0)));
+      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+      padding: 20px 50px;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+    }
+
+    .flex-form input[type="submit"] {
+      background: #0E71EB;
+      height: 50px;
+      border: 1px solid #0E71EB;
+      color: #fff;
+      padding: 0 30px;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+
+    .flex-form input[type="submit"]:hover {
+      background: #0956b5;
+      border: 1px solid #0E71EB;
+    }
+
+    .flex-form {
+      display: -webkit-box;
+      display: flex;
+      z-index: 10;
+      position: relative;
+      width: 500px;
+      box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .flex-form>* {
+      border: 0;
+      padding: 0 0 0 10px;
+      background: #fff;
+      line-height: 50px;
+      font-size: 1rem;
+      border-radius: 0;
+      outline: 0;
+      -webkit-appearance: none;
+    }
+
+    input[type="search"] {
+      height: 50px;
+      flex-basis: 500px;
+    }
+
+    #madeby {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 25px 100px;
+      color: #fff;
+    }
+
+    @media all and (max-width:800px) {
       body {
-        margin: 0;
-        background: url(bg.jpg) no-repeat center -100px fixed, #030a1d;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        color: #0a0a0b;
-        overflow: hidden;
-        box-shadow: inset 0 0 0 1000px rgb(58 41 105 / 60%)
+        font-size: 0.9rem;
       }
 
-      ul, nav{
-        list-style: none;
-        padding: 0;
+      .flex-form {
+        width: 100%;
       }
 
-      a {
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-        opacity: 0.9;
+      input[type="search"] {
+        flex-basis: 100%;
       }
 
-      a:hover {
-        opacity: 1;
-      }
-
-      h1 {
-        font-size: 3rem;
-        font-weight: 700!important;
-        color: #fff;
-        margin: 0 0 1.5rem;
-        font-family: 'Lato', sans-serif!important;
-      }
-
-      i {
-        font-size: 1.3rem;
+      .flex-form>* {
+        font-size: 1.2rem;
       }
 
       header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #fff;
-        padding: 10px 100px 0;
-      }
-
-      header nav ul {
-        display: flex;
-      }
-
-      header nav li{
-        margin: 0 15px;
-      }
-
-      header nav li:first-child{
-        margin-left: 0; 
-      }
-
-      header nav li:last-child{
-        margin-right: 0;  
-      }
-
-      a.btn {
-        color: #fff;
-        padding: 10px;
-        border: 1px solid rgba(255,255,255,0.5);
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        transition: all 0.2s;
-      }
-
-      a.btn:hover {
-        background: #d73851;
-        border: 1px solid #d73851;
-        color: #fff;
-      }
-
-      .cover  {
-        height: 100vh;
-        width: 100%;
-        background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.05)), to(rgba(0,0,0,0)));
-        background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
-        background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
-        padding: 20px 50px;
-        display: -webkit-box;
-        display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         flex-direction: column;
-        -webkit-box-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        align-items: center;
+        padding: 10px !important;
       }
 
-      .flex-form input[type="submit"] {
-        background: #0E71EB;
-        height: 50px;
-        border: 1px solid #0E71EB;
-        color: #fff;
-        padding: 0 30px;
-        cursor: pointer;
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        transition: all 0.2s;
+      header h2 {
+        margin-bottom: 15px;
       }
 
-      .flex-form input[type="submit"]:hover {
-        background: #0956b5;
-        border: 1px solid #0E71EB;
+      h1 {
+        font-size: 2rem;
+      }
+
+      .cover {
+        padding: 20px;
+      }
+
+      #madeby {
+        padding: 30px 20px;
+      }
+    }
+
+    @media all and (max-width:360px) {
+      header nav li {
+        margin: 0 10px;
       }
 
       .flex-form {
         display: -webkit-box;
         display: flex;
-        z-index: 10;
-        position: relative;
-        width: 500px;
-        box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
-      }
-
-      .flex-form > * {
-        border: 0;
-        padding: 0 0 0 10px;
-        background: #fff;
-        line-height: 50px;
-        font-size: 1rem;
-        border-radius: 0;
-        outline: 0;
-        -webkit-appearance: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
       }
 
       input[type="search"] {
-        height: 50px;
-        flex-basis: 500px;
+        flex-basis: 0;
       }
 
-      #madeby {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        padding: 25px 100px;
-        color: #fff;
+      label {
+        display: none;
       }
-
-        @media all and (max-width:800px) {
-          body {
-            font-size: 0.9rem;
-          }
-
-          .flex-form {
-            width: 100%;
-          }
-
-          input[type="search"] {
-            flex-basis: 100%;
-          }
-
-          .flex-form > * {
-            font-size: 1.2rem;
-          }
-
-          header {
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            flex-direction: column;
-            padding: 10px !important;
-          }
-
-          header h2 {
-            margin-bottom: 15px;
-          }
-
-          h1 {
-            font-size: 2rem;
-          }
-
-          .cover {
-            padding: 20px;
-          }
-
-          #madeby {
-            padding: 30px 20px;
-          }
-        }
-
-        @media all and (max-width:360px) {
-          header nav li{
-            margin: 0 10px;
-          }
-
-          .flex-form {
-            display: -webkit-box;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            flex-direction: column;
-          }
-
-          input[type="search"] {
-            flex-basis: 0;
-          }
-
-          label {
-            display: none;
-          }
-        } 
+    }
 
 
-        .box {
-          background: #210a7d2e;
-          padding: 50px;
-          border-radius: 20px;
-          box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
-          backdrop-filter: blur(6px);
-        }
+    .box {
+      background: #210a7d2e;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+      backdrop-filter: blur(6px);
+    }
 
-        p {
-          color: white;
-          opacity: 0.8;
-          font-size: 0.8em;
-        }
-    </style>
+    p {
+      color: white;
+      opacity: 0.8;
+      font-size: 0.8em;
+    }
+  </style>
 
-    <div class="container">
+  <div class="container">
 
     <div class="cover">
-        <div class="box" style="width: 700px">
-            <h1>This window will reconnect to the last Zoom call automatically when OBS starts again.</h1>
-        </div>
+      <div class="box" style="width: 700px">
+        <h1>This window will reconnect to the last Zoom call automatically when OBS starts again.</h1>
+      </div>
     </div>
-    </div>
+  </div>
 
 </body>
 

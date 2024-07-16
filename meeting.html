@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Maestro Launcher</title>
+    <title>EW Controller</title>
     <meta charset="utf-8" />
     <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.11.0/css/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.11.0/css/react-select.css" />
@@ -29,12 +29,13 @@
         .loading-main {
             opacity: 0;
         }
+
         .gallery-video-container__video-frame--active,
         .speaker-active-container__video-frame--active,
         .speaker-bar-container__video-frame--active,
         .speaker-active-container__video-frame--active {
-            border-image: linear-gradient(transparent, transparent, transparent) 20/4px!important;
-            outline: 0px!important;
+            border-image: linear-gradient(transparent, transparent, transparent) 20/4px !important;
+            outline: 0px !important;
         }
 
         .gallery-video-container__main-view .video-avatar__avatar-footer {
@@ -62,14 +63,20 @@
         .last-chat-message-tip__container--menu,
         .join-dialog,
         .settings-feature-tips,
-        .wc-toast, /* hide message to update sdk */
-        .notification-message-wrap, /* messages about people in the waiting room */
-        .ReactModal__Overlay /* modal saying couldn't join audio */
-        {
-            visibility: hidden!important;
+        .wc-toast,
+        /* hide message to update sdk */
+        .notification-message-wrap,
+        /* messages about people in the waiting room */
+        .ReactModal__Overlay
+
+        /* modal saying couldn't join audio */
+            {
+            visibility: hidden !important;
         }
 
-        #participantSectionMenu, #chatSectionMenu, .notification-message-feature-wrap {
+        #participantSectionMenu,
+        #chatSectionMenu,
+        .notification-message-feature-wrap {
             display: none;
         }
 
@@ -81,19 +88,20 @@
 
         /* Make 'remove pin' and 'remove spot' buton out of participant video */
         .meeting-info-container--left-side {
-            top: 0!important;
+            top: 0 !important;
         }
 
         /* Remove green shiled app app icon when hovering */
-        #meeting-info-indication, #app-signal {
-            display: none!important;
+        #meeting-info-indication,
+        #app-signal {
+            display: none !important;
         }
 
         .multi-view,
         .video-share-layout,
         .speaker-bar-container__horizontal-view-wrap,
         #zmmtg-root {
-            background: transparent!important;
+            background: transparent !important;
         }
 
         #wc-content:hover .meeting-info-container,
@@ -105,9 +113,8 @@
         .video-avatar__avatar-footer {
             border-radius: 8px;
             margin: 3px;
-            padding: 4px 9px 4px 3px!important;
+            padding: 4px 9px 4px 3px !important;
         }
-
     </style>
 </head>
 
