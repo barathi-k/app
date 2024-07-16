@@ -1,5 +1,5 @@
 setTimeout(() => {
-  document.getElementById('non_essential_fields').style.display = 'block'
+  document.getElementById('non_essential_fields').style.display = ''
 }, 200)
 
 
