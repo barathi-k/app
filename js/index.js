@@ -1,6 +1,6 @@
 setTimeout(() => {
   document.getElementById('non_essential_fields').style.display = ''
-}, 200)
+}, 500)
 
 
 window.addEventListener('DOMContentLoaded', function (event) {
